@@ -1,5 +1,5 @@
 document.querySelector('#linux-net').onclick = function () {
-    alert('更多笔记正在玩命上传ing');
+    alert('临时版本，凑活一下233之后抽空补全');
 }
 document.querySelector('#io-assemble').onclick = function () {
     alert('更多笔记正在玩命上传ing');

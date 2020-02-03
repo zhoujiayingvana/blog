@@ -7,11 +7,6 @@ h1 {
     text-shadow: 3px 2.5px 3px cornflowerblue;
 }
 
-#sub-title {
-    font-size: 25px;
-    text-align: right;
-    color: royalblue;
-}
 
 h2 {
     color: darkorange;
@@ -19,10 +14,16 @@ h2 {
     text-align: center;
 }
 
+a:link {
+    color:black;
+    text-decoration: none;
+}
+a:visited {
+    color:dimgrey;
+}
 .content {
     text-align: center;
 }
-
 /* 鼠标悬停 */
 .chosen:hover {
     color: moccasin;
@@ -38,8 +39,8 @@ li::first-letter {
 
 p,
 li {
-    font-size: 16px;
-    line-height: 2;
+    font-size: 20px;
+    line-height: 30px;
     letter-spacing: 1px;
     margin: 10px 40px;
 }
@@ -97,4 +98,9 @@ body {
 }
 #collection td{
     padding:0 0;
+}
+#sub-title {
+    font-size: 25px;
+    text-align: right;
+    color: royalblue;
 }
