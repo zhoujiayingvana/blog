@@ -61,8 +61,9 @@ html {
 
 .insert {
     display: block;
-    margin: 0 auto;
-    height: 500px;
+    margin: 0px 0px;
+    height: 300px;
+    width: 312px
 }
 
 body {
@@ -89,4 +90,11 @@ body {
 #top-bar {
     width: 100%;
     overflow: hidden;
+}
+#collection{
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+#collection td{
+    padding:0 0;
 }
