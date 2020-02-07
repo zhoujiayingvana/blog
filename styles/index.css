@@ -149,3 +149,22 @@ time {
     text-align: right;
     color: royalblue;
 }
+
+figure{
+    margin:20px auto;
+    text-align: center;
+}
+
+video {
+    object-fit: cover;
+}
+.insert-video{
+    display:block;
+    width: 800px;
+    margin: 20px auto;
+    text-align:center;
+}
+iframe {
+    border:none;
+
+}

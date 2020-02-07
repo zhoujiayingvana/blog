@@ -8,7 +8,7 @@
     <meta name="description" content="东南大学SEU计软本科生学习笔记">
     <title>Fenris' Blog</title>
     <!-- 添加自定义图标 -->
-    <link rel="shortcut icon" href="images/口袋妖怪2.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/口袋妖怪3.ico" type="image/x-icon">
     <link href="styles/index.css" rel="stylesheet" type="text/css">
     <script src="scripts/main.js" defer></script>
 </head>
@@ -16,7 +16,13 @@
 <body>
     <div class="transparent">
         <!-- 封面图 -->
-        <img src="images/星尘斗士6.webp" alt="封面" id="top-bar">
+        <img src="images/星尘斗士6.jpg" 
+            srcset="images/星尘斗士6.jpg 400w, 
+                    images/星尘斗士6-phone.jpg 320w" 
+            sizes="(max-width: 320px) 592px,
+                    (max-width: 400px) 25.5vw, 
+                    25.5vw"
+            alt="封面" id="top-bar">
         <!-- 导航栏 -->
         <nav>
             <ul>
@@ -55,18 +61,20 @@
             <p><a href="#pictures" title="跳转到JOJO系列的图片" class="chosen" id="c1">JOJO图片</a></p>
             <p><a href="#charactors" class="chosen" id="c2">星尘斗士</a></p>
             <h2><a id="pictures">JOJO图片</a></h2>
-            <table id="collection">
-                <tr>
-                    <td><img src="images/承太郎4.webp" alt="承太郎" class="insert"></td>
-                    <td><img src="images/二乔1.webp" alt="二乔" class="insert"></td>
-                    <td><img src="images/波波1.webp" alt="波波" class="insert"></td>
-                </tr>
-                <tr>
-                    <td><img src="images/花花8.webp" alt="花花" class="insert"></td>
-                    <td><img src="images/阿布嘟嘟1.webp" alt="阿布嘟嘟" class="insert"></td>
-                    <td><img src="images/伊奇.webp" alt="伊奇" class="insert"></td>
-                </tr>
-            </table>
+            <figure>
+                <table id="collection">
+                    <tr>
+                        <td><img src="images/承太郎4.webp" alt="承太郎" class="insert" title="空条承太郎"></td>
+                        <td><img src="images/二乔1.webp" alt="二乔" class="insert" title="乔瑟夫·乔斯达"></td>
+                        <td><img src="images/波波1.webp" alt="波波" class="insert" title="简·皮耶尔·波鲁纳雷夫"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/花花8.webp" alt="花花" class="insert" title="花京院典明"></td>
+                        <td><img src="images/阿布嘟嘟1.webp" alt="阿布嘟嘟" class="insert" title="阿布德尔"></td>
+                        <td><img src="images/伊奇.webp" alt="伊奇" class="insert" title="伊奇"></td>
+                    </tr>
+                </table>
+            </figure>
             <h2><a id="charactors">星尘斗士</a></h2>
             <ul class="char">
                 <li>空条承太郎</li>
@@ -81,6 +89,29 @@
                 <li>阿布德尔</li>
                 <li>伊奇</li>
             </ul>
+
+            <h2>动画OP</h2>
+            <figure>
+                <video class="insert-video" controls poster="images/dio承太郎.jpg" preload="metadata">
+                    <source src="videos/星尘斗士OP.mp4" type="video/mp4">
+                    <p>你的浏览器无法播放视频</p>
+                </video>
+                <figcaption>JOJO星辰远征军OP1</figcaption>
+            </figure>
+
+            <h2>MAD</h2>
+            <figure>
+                <iframe class="insert-video" src="https://player.bilibili.com/player.html?aid=2087530&cid=3235399&page=1" 
+                scrolling="no"  framespacing="0" allowfullscreen="true" style="width:800px; height:600px; max-width: 100%">
+                </iframe>
+                <figcaption>bilibili拜年祭--来玩球吧！</figcaption>
+            </figure>
+
+            <h2>软件本科生培养方案</h2>
+            <object data="SEU/2018本科生培养计划.pdf" type="application/pdf"
+                width="800" height="600" typemustmatch style="display: block; width: 800; margin:20px auto; text-align: center;">
+            <p>You don't have a PDF plugin, but you can <a href="SEU/2018本科生培养计划.pdf">download the PDF file.</a></p>
+            </object>
         </main>
         <!-- 侧边栏，左侧，可展开收起 -->
         <aside>
