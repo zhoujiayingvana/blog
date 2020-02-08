@@ -10,10 +10,10 @@ document.querySelector('#io-interface').onclick = function () {
 let myImage = document.querySelector("#top-bar")
 myImage.onclick = function () {
     let mySrc = myImage.getAttribute('src');
-    if (mySrc === 'images/星尘斗士6.webp') {
+    if (mySrc === 'images/星尘斗士6.jpg') {
         myImage.setAttribute('src', 'images/星尘斗士2.webp');
     } else {
-        myImage.setAttribute('src', 'images/星尘斗士6.webp');
+        myImage.setAttribute('src', 'images/星尘斗士6.jpg');
     }
 }
 

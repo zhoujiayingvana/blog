@@ -128,9 +128,9 @@ time {
 #top-bar {
     display: block;
     min-width: 1484.8px;
-    min-height:382.9px;
-    height:25.5vw;
-    width:100%;
+    min-height: 382.9px;
+    height: 25.5vw;
+    width: 100%;
     position: relative;
     overflow: hidden;
 }
@@ -150,21 +150,33 @@ time {
     color: royalblue;
 }
 
-figure{
-    margin:20px auto;
+figure {
+    margin: 20px auto;
     text-align: center;
 }
 
 video {
     object-fit: cover;
 }
-.insert-video{
-    display:block;
+
+.insert-video {
+    display: block;
     width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+iframe {
+    border: none;
+
+}
+
+table{
     margin: 20px auto;
     text-align:center;
 }
-iframe {
-    border:none;
-
+thead,tbody{
+    font-size: 120%;
+    font-style: italic;
+    font-weight: bold;
 }
