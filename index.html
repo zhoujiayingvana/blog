@@ -136,7 +136,7 @@
                 </tbody>
             </table>
 
-            <h2>动画OP</h2>
+            <!-- <h2>动画OP</h2>
             <figure>
                 <video class="insert-video" controls poster="images/dio承太郎.jpg" preload="auto">
                     <source src="videos/星尘斗士OP.mp4" type="video/mp4">
@@ -147,17 +147,34 @@
 
             <h2>MAD</h2>
             <figure>
-                <iframe class="insert-video" src="https://player.bilibili.com/player.html?aid=2087530&cid=3235399&page=1" 
-                scrolling="no"  framespacing="0" allowfullscreen="true" style="width:800px; height:600px; max-width: 100%">
+                <iframe class="insert-video"
+                    src="https://player.bilibili.com/player.html?aid=2087530&cid=3235399&page=1" scrolling="no"
+                    framespacing="0" allowfullscreen="true" style="width:800px; height:600px; max-width: 100%">
                 </iframe>
                 <figcaption>bilibili拜年祭--来玩球吧！</figcaption>
             </figure>
 
             <h2>软件本科生培养方案</h2>
-            <object data="SEU/2018本科生培养计划.pdf" type="application/pdf"
-                width="800" height="600" typemustmatch style="display: block; width: 800; margin:20px auto; text-align: center;">
-            <p>You don't have a PDF plugin, but you can <a href="SEU/2018本科生培养计划.pdf">download the PDF file.</a></p>
-            </object>
+            <object data="SEU/2018本科生培养计划.pdf" type="application/pdf" width="800" height="600" typemustmatch
+                style="display: block; width: 800; margin:20px auto; text-align: center;">
+                <p>You don't have a PDF plugin, but you can <a href="SEU/2018本科生培养计划.pdf">download the PDF file.</a></p>
+            </object> -->
+            <h2>评论区</h2>
+            <form action="/connection" method="post">
+                <fieldset>
+                    <legend>评论区</legend>
+                    <div>
+                        <textarea id="msg" name="user_message">欢迎留下任何评论~</textarea>
+                    </div>
+                    <div>
+                        <label for="mail"><abbr title="必填项">联系方式:*</abbr></label>
+                        <input type="email" id="mail" name="user_email" value="请填写你的邮箱">
+                    </div>
+                    <div class="button">
+                        <button type="submit">提交</button>
+                    </div>
+                </fieldset>
+            </form>
         </main>
         <!-- 侧边栏，左侧，可展开收起 -->
         <aside>
