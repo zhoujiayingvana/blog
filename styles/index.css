@@ -108,6 +108,12 @@ nav li a:hover {
     width: 312px
 }
 
+input[type=search]{
+    border: 1px solid grey;
+    border-radius: 1px;
+    -webkit-appearance: none;
+}
+
 footer,
 footer p,
 time {
@@ -118,6 +124,11 @@ time {
     font-size: 10px;
 }
 
+footer a:link,
+footer a:visited{
+    color:grey;
+    text-decoration: underline;
+}
 
 .contect a:link,
 .contect a:visited {

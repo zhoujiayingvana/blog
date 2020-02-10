@@ -41,6 +41,12 @@
                 -->
                 <li><a>娱乐一下▼</a></li>
             </ul>
+            <form>
+                <div>
+                    <label>搜索文档：</label>
+                    <input type="search" id="search" name="search">
+                </div>
+            </form>
         </nav>
         <!-- 网页主体 -->
         <main>
@@ -159,8 +165,62 @@
                 style="display: block; width: 800; margin:20px auto; text-align: center;">
                 <p>You don't have a PDF plugin, but you can <a href="SEU/2018本科生培养计划.pdf">download the PDF file.</a></p>
             </object> -->
+            <div>
+                <input type="number" name="age" id="age" min=1 max=10 step=2>
+            </div>
+            <div>
+                <label for="beans">How many beans can you eat?</label>
+                <input type="range" name="beans" id="beans" min="0" max="500" step="10">
+                <span class="beancount"></span>
+            </div>
+            <div>
+                <input type="datetime-local" name="datetime" id="datetime">
+                <input type="month" name="month" id="month">
+                <input type="time" name="time" id="time">
+                <input type="week" name="week" id="week">
+                <input type="color" name="color" id="color">
+            </div>
+            <div><input type="file" name="file" id="file" accept="image/*" multiple></div>
+            <div><progress max="100" value="75">75/100</progress></div>
+            <div>
+                <meter min="0" max="100" value="90" low="33" high="66" optimum="10">75</meter>
+            </div>
+            <div>
+                <label for="myFruit">What's your favorite fruit?</label>
+                <input type="text" name="myFruit" id="myFruit" list="mySuggestion">
+                <datalist id="mySuggestion">
+                    <select id="suggestion" name="altFruit">
+                        <option>Apple</option>
+                        <option>Banana</option>
+                        <option>Blackberry</option>
+                        <option>Blueberry</option>
+                        <option>Lemon</option>
+                        <option>Lychee</option>
+                        <option>Peach</option>
+                        <option>Pear</option>
+                    </select>
+                </datalist>
+            </div>
+            <label for="carrots">carrots</label>
+            <input type="radio" checked id="carrots" name="carrots" value="carrots">
+            <label for="apples">apples</label>
+            <input type="radio" id="apples" name="carrots" value="apples">
+            <div>
+                <select id="groups" name="groups">
+                    <optgroup label="fruits">
+                        <option>Banana</option>
+                        <option selected>Cherry</option>
+                        <option>Lemon</option>
+                    </optgroup>
+                    <optgroup label="vegetables">
+                        <option>Carrot</option>
+                        <option>Eggplant</option>
+                        <option>Potato</option>
+                    </optgroup>
+                </select>
+            </div>
             <h2>评论区</h2>
-            <form action="/connection" method="post">
+            <form action="#" method="post">
                 <fieldset>
                     <legend>评论区</legend>
                     <div>
@@ -168,7 +228,7 @@
                     </div>
                     <div>
                         <label for="mail"><abbr title="必填项">联系方式:*</abbr></label>
-                        <input type="email" id="mail" name="user_email" value="请填写你的邮箱">
+                        <input type="email" id="mail" name="user_email" placeholder="请填写你的邮箱">
                     </div>
                     <div class="button">
                         <button type="submit">提交</button>
@@ -189,6 +249,10 @@
         <!-- 页脚 -->
         <footer>
             <p>© 2020 Fenris保留所有权利</p>
+            <p>所用图片均来自<a href="https://www.pixiv.net" target="_blank">pixiv</a></p>
+            <p>特别鸣谢：<a href="https://www.pixiv.net/users/2341869" target="_blank">イシイマ</a>
+                、<a href="https://www.pixiv.net/users/74184" target="_blank">零＠通販始めた</a>
+            </p>
             <!-- 联系界面 -->
             <div class="contect">
                 <p><a href="mailto:1147083244@qq.com" class="chosen" id="send-mail" target="_blank">联系我</a></p>
