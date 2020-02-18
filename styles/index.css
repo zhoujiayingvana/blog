@@ -108,7 +108,7 @@ nav li a:hover {
     width: 312px
 }
 
-input[type=search]{
+input[type=search] {
     border: 1px solid grey;
     border-radius: 1px;
     -webkit-appearance: none;
@@ -125,8 +125,8 @@ time {
 }
 
 footer a:link,
-footer a:visited{
-    color:grey;
+footer a:visited {
+    color: grey;
     text-decoration: underline;
 }
 
@@ -155,8 +155,9 @@ footer a:visited{
     padding: 0 0;
 }
 
-#sub-title {
-    font-size: 25px;
+#sub-title,
+#clock {
+    font-size: 20px;
     text-align: right;
     color: royalblue;
 }
@@ -182,57 +183,62 @@ iframe {
 
 }
 
-table{
+table {
     margin: 20px auto;
-    text-align:center;
+    text-align: center;
 }
-thead,tbody{
+
+thead,
+tbody {
     font-size: 120%;
     font-style: italic;
     font-weight: bold;
 }
 
-form{
+form {
     margin: 0 auto;
-    width:400px;
+    width: 400px;
 }
 
-form div+div{
+form div+div {
     margin-top: 1em;
 }
 
-label{
+label {
     /* 确保所有label大小相同并正确对齐 */
     display: inline-block;
-    width:200px;
+    width: 200px;
     text-align: right;
 }
 
-input,textarea{
+input,
+textarea {
 
-  /* 调整文本输入框的边框样式 */
-  border: 1px solid #999;
+    /* 调整文本输入框的边框样式 */
+    border: 1px solid #999;
 }
 
-input:focus, textarea:focus {
-  /* 给激活的元素一点高亮效果 */
-  border-color: #000;
+input:focus,
+textarea:focus {
+    /* 给激活的元素一点高亮效果 */
+    border-color: #000;
 }
 
 textarea {
     /* 使多行文本输入框和它们的label正确对齐 */
     vertical-align: top;
-  
+
     /* 给文本留下足够的空间 */
     height: 5em;
-  }
+}
 
-  .button {
+.button {
     /* 把按钮放到和文本输入框一样的位置 */
-    padding-left: 90px; /* 和label的大小一样 */
-  }
-  
-  button {
+    padding-left: 90px;
+    /* 和label的大小一样 */
+}
+
+button {
     /* 这个外边距的大小与label和文本输入框之间的间距差不多 */
     margin-left: .5em;
-  }
+}

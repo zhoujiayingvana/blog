@@ -1,3 +1,7 @@
+// Global variable
+let date = new Date();
+
+
 document.querySelector('#linux-net').onclick = function () {
     alert('临时版本，凑活一下233之后抽空补全');
 }
@@ -17,14 +21,35 @@ myImage.onclick = function () {
     }
 }
 
+// 设置版权时间
+function displayCopyrightTime() {
+    let year = date.getFullYear();
+    document.getElementById("copyrightTime").textContent = year;
+}
+// 显示时间
+function displayTime() {
+    let date=new Date();
+    let month=date.getMonth();
+    let day=date.getDate();
+    let weekday=date.getDay();
+    let hour=date.getHours();
+    let minute=date.getMinutes();
+    let second=date.getSeconds();
+    let weeks=["日","一","二","三","四","五","六"];
+    let currentTime=month+"月"+day+"日"+" 星期"+weeks[weekday]+"  "+hour+":"+minute+":"+second;
+    document.getElementById("clock").textContent=currentTime;
+}
+
+
 let subTitle = document.querySelector('#sub-title');
 let myButton = document.querySelector('button');
+
 function setUserName() {
     let userName = prompt("请输入你的名字：");
-    if(!userName || userName===null){
+    if (!userName || userName === null) {
         alert("请输入一个名字！")
         setUserName();
-    }else{
+    } else {
         localStorage.setItem('name', userName);
         subTitle.textContent = "Welcome " + userName;
     }
@@ -35,6 +60,12 @@ if (!localStorage.getItem('name')) {
     let storedName = localStorage.getItem('name');
     subTitle.textContent = "Welcome " + storedName;
 }
-myButton.onclick=function(){
+myButton.onclick = function () {
     setUserName();
 }
+
+
+// 执行函数
+displayCopyrightTime();
+displayTime();
+setInterval(displayTime,1000);
