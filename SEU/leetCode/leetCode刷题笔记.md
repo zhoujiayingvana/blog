@@ -1,3 +1,19 @@
+# 模板
+
+### 题目
+
+提示
+
+题目来源
+
+### 方法介绍
+
+### 思路
+
+### python3实现
+
+### 做题心得
+
 # 滑动窗口算法
 
 https://www.zhihu.com/topic/20746237/intro
@@ -315,3 +331,161 @@ print(maxSlidingWindow(num,3))
 本题借用了胜者树败者树的思路，但是跟“外部排序”略有不同，只能使用胜者树，不能使用败者树，因为排序的时候是找到最大（最小）值后就将根节点的值弹出不再使用（即每次重构根节点的值都会更新），而本题最大（最小）值可能会重复使用（即每次重构根节点的值不一定会更新）。败者树只存储了败者，重构时一定会更新根节点，所以会出现问题。
 
 另外当滑动窗口移动时，重构时每次替换的叶子节点位置也依次变化，如果没注意这点，也会导致bug。
+
+
+
+# 哈希表(hash table)
+
+## 49.字母异位词分组
+
+### 题目
+
+给定一个字符串数组，将字母异位词组合在一起。字母异位词指字母相同，但排列不同的字符串。
+
+示例:
+
+> 输入: ["eat", "tea", "tan", "ate", "nat", "bat"],
+> 输出:
+> [
+>   ["ate","eat","tea"],
+>   ["nat","tan"],
+>   ["bat"]
+> ]
+
+说明：
+
+所有输入均为小写字母。
+不考虑答案输出的顺序。
+[题目来源](https://leetcode-cn.com/problems/group-anagrams)
+
+提示
+
+leetcode倒数第二个测试用例给的数组非常大，用普通的方法多半会超时（飙泪），必须使用奇淫技巧来突破。有两个切入点：
+
+1. 当且仅当两个字符串的排序字符串相等时，它们是字母异位词。
+
+   > "tea" ->"aet"；“eat"->"aet"
+   >
+   > "poor"->"oopr"；”ropo“->"oopr"
+   >
+   > "and"->"adn"
+   >
+   > "ad"->"ad"
+
+2. 当且仅当它们的字符计数（每个字符的出现次数）相同时，两个字符串是字母异位词。
+
+### 思路
+
+按照第一个思路，并且利用哈希表减少运算时间。
+
+python中使用”字典“维护一个分组表，键值（key）为排序后的字符串，值（value）为子分组的下标
+
+> result=[
+> ["ate","eat","tea"],
+> ["nat","tan"],
+> ["bat"]
+> ]
+>
+> group={"aet":0,"ant":1"abt":2}
+
+每次对字符串排序后加入对应的分组中，或者创建新的分组
+
+### python3实现
+
+```
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        result=[]
+        # key为排序后单词，value为result的分组下标
+        group={}
+        for i in range(len(strs)):
+            temp_list=list(strs[i])
+            temp_list.sort()
+            sorted_string="".join(temp_list)
+            if sorted_string in group:
+                result[group[sorted_string]].append(strs[i])
+            else:
+                group[sorted_string]=len(group)
+                result.append([strs[i]])
+        return result
+```
+
+### 做题心得
+
+如果15分钟想不出来特别妙的方法就直接看答案吧...毕竟就算思路对了实现也要大半天...
+
+复杂度较高的解法
+
+```
+def groupAnagrams(strs):
+    result=[]
+    group=[]
+    group.append({})
+    # 空串
+    if not len(strs):
+        return result
+    # 初始化第一个分组
+    # 元素分组下标（解决jo极测试用例）
+    empty_string_group_index=-1
+    for i in strs[0]:
+        if i not in group[0]:
+            group[0][i]=1
+        else:
+            group[0][i]+=1
+    result.append([])
+    result[0].append(strs[0])
+    if strs[0]=="":
+        empty_string_group_index=0
+    # 遍历给定字符串数组的每个元素
+    for i in range(1,len(strs)):
+        flag1=True
+        if strs[i]=="":
+            # 空串第一次出现,更新分组下标
+            if empty_string_group_index==-1:
+                group.append({})
+                empty_string_group_index=len(group)-1
+                result.append([])
+            result[empty_string_group_index].append("")
+            continue
+        # 遍历每个分组
+        for m in range(len(group)):
+            # 判断单词是否符合分组规则
+            flag2=True
+            # 遍历给定字符串数组元素的每个字母
+            current_string=strs[i]
+            current_dict=group[m]
+            # 首先检查长度是否匹配
+            if len(current_string)!=len(result[m][0]):
+                # 不匹配直接跳出
+                continue
+            # 排除空字符串的情况
+            for j in range(len(strs[i])):
+                current_letter=strs[i][j]
+                # 判断字母和字母出现频率是否不同
+                if (current_letter not in current_dict) or (current_string.count(current_letter) != current_dict[current_letter]):
+                    flag2=False
+                    break
+            # 加入当前分组并跳出
+            if flag2:
+                result[m].append(current_string)
+                flag1=False
+                break
+        # 添加新分组
+        if flag1:
+            temp_dict={}
+            for k in current_string:
+                if k not in temp_dict:
+                    temp_dict[k]=1
+                else:
+                    temp_dict[k]+=1
+            group.append(temp_dict)
+            result.append([])
+            result[len(result)-1].append(current_string)
+
+    return result
+
+
+test1=["tea","and","ace","ad","eat","dans"]
+print(groupAnagrams(test1))         
+```
+

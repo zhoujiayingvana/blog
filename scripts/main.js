@@ -24,20 +24,25 @@ myImage.onclick = function () {
 // 设置版权时间
 function displayCopyrightTime() {
     let year = date.getFullYear();
-    document.getElementById("copyrightTime").textContent = year;
+    document.querySelector("#copyrightTime").textContent = year;
 }
+
 // 显示时间
+function formatTime(time) {
+   if (time<10) return "0"+time;
+   else return time;
+}
 function displayTime() {
     let date=new Date();
     let month=date.getMonth();
     let day=date.getDate();
     let weekday=date.getDay();
-    let hour=date.getHours();
-    let minute=date.getMinutes();
-    let second=date.getSeconds();
+    let hour=formatTime(date.getHours());
+    let minute=formatTime(date.getMinutes());
+    let second=formatTime(date.getSeconds());
     let weeks=["日","一","二","三","四","五","六"];
     let currentTime=month+"月"+day+"日"+" 星期"+weeks[weekday]+"  "+hour+":"+minute+":"+second;
-    document.getElementById("clock").textContent=currentTime;
+    document.querySelector("#clock").textContent=currentTime;
 }
 
 

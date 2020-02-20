@@ -76,3 +76,8 @@ function showHeroes(jsonObj) {
         section.appendChild(myArticle);
     }
 }
+
+async function hello() { return "Hello" };
+hello().then(console.log).then(setTimeout( function(){
+    console.log(2000)},2000));
+// console.log(hello());
