@@ -242,3 +242,10 @@ button {
     /* 这个外边距的大小与label和文本输入框之间的间距差不多 */
     margin-left: .5em;
 }
+
+
+.top-button{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 40px;
+}
